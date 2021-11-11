@@ -21,48 +21,63 @@ public class parte1 {
                 caso isso não ocorra em nenhuma das 3 tentativas deve ser impresso “Resposta incorreta nas 3 tentativas”.*/
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int tentativas = 3;
-        String res;
-        
+        int tentativas = 0;
+        String res, resposta;
+        int acerto = 0;
+        int erro = 3;
+
         System.out.println("----Responda essa questão----");
-        
-        do{
-          System.out.println("A respeito dos conjuntos numéricos, de suas definições e das relações de inclusão\n"
-                + "existentes entre eles, assinale a alternativa verdadeira:");
-        System.out.println("(A) O conjunto dos números naturais é formado pelos números inteiros positivos.\n"
-                + "(B) O conjunto dos números inteiros é formado por todos os números inteiros positivos e negativos.\n"
-                + "(C) O conjunto dos números racionais contém o conjunto dos números reais.\n"
-                + "(D) O conjunto dos números inteiros contém o conjunto dos números naturais.\n"
-                + "(E) O conjunto dos números reais é disjunto do conjunto dos números racionais.");  
-          res = input.next();  
+
+        do {
+            System.out.println("A respeito dos conjuntos numéricos, de suas definições e das relações de inclusão\n"
+                    + "existentes entre eles, assinale a alternativa verdadeira:");
+            System.out.println("(A) O conjunto dos números naturais é formado pelos números inteiros positivos.\n"
+                    + "(B) O conjunto dos números inteiros é formado por todos os números inteiros positivos e negativos.\n"
+                    + "(C) O conjunto dos números racionais contém o conjunto dos números reais.\n"
+                    + "(D) O conjunto dos números inteiros contém o conjunto dos números naturais.\n"
+                    + "(E) O conjunto dos números reais é disjunto do conjunto dos números racionais.");
+            res = input.next();
             switch (res) {
                 case "A":
-                    System.out.println("Resposta correta");
+                case "a":
+                    acerto = 1;
+                    tentativas++;
                     break;
-                case "B": 
-                    System.out.println("Resposta incorreta");
-                    tentativas --;
+                case "B":
+                case "b":
+                    tentativas++;
+                    erro--;
+
                     break;
                 case "C":
-                    System.out.println("Resposta incorreta");
-                    tentativas --;
+                case "c":
+                    tentativas++;
+                    erro--;
                     break;
                 case "D":
-                    System.out.println("Resposta incorreta");
-                    tentativas --;
+                case "d":
+                    tentativas++;
+                    erro--;
                     break;
-                case "E":    
-                    System.out.println("Resposta incorreta");
-                    tentativas --;
+                case "E":
+                case "e":
+                    tentativas++;
+                    erro--;
                     break;
                 default:
                     System.out.println("Opção invalida");
-                    
+
             }
-            
-        }
-        while (tentativas > 0);
-            System.out.println("1");
+            if ("A".equals(res) || "a".equals(res)) {
+                System.out.printf("Resposta correta, você acertou na %d tentativa.", tentativas);
+            } else if (erro == 0) {
+                System.out.println("Resposta incorreta nas 3 tentativas.");
+            } else {
+                System.out.printf("Resposta incorreta, você ainda tem %d tentativas.", erro);
+            }
+
+        } while (tentativas < 3 && acerto == 0);
+
     }
 
 }
