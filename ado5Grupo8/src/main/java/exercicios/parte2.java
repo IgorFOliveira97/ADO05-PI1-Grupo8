@@ -43,6 +43,7 @@ public class parte2 {
         System.out.println("O valor de 4 aparece: " + quatro + " vezes");
         System.out.println("O valor de 5 aparece: " + cinco + " vezes");
         System.out.println("O valor de 6 aparece: " + seis + " vezes");
+        System.out.println("aa");
     }
     
 }
