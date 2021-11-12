@@ -57,7 +57,7 @@ public class parte2 {
         System.out.printf("A porcentagem de vezes que o valor 5 aparece é de %.2f \n", porcentagem5);
         System.out.println("O valor de 6 aparece: " + seis + " vezes");
         System.out.printf("A porcentagem de vezes que o valor 6 aparece é de %.2f \n", porcentagem6);
-        System.out.printf("total: " + total);
+        System.out.printf("total da porcentagem: %.2f " , total);
     }
 
 }
