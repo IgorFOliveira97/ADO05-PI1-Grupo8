@@ -17,6 +17,7 @@ public class parte3 {
     /**
      * @param args the command line arguments
      */
+    //ADO 5 PARTE 3
     public static void main(String[] args) {
         int chute = 0,
                 sorteado,
